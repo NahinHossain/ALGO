@@ -1,24 +1,24 @@
 #include <iostream>
 using namespace std;
 
-void heap(int *arr, int i, int num)
+void heap(int *arr, int n, int nummber)
 {
-    int j, temp;
-    temp = arr[i];
-    j = 2*i;
-    while (j <= num)
+    int m, temp;
+    temp = arr[n];
+    m = 2*n;
+    while (m <= number)
     {
-        if (j < num && arr[j+1] > arr[j])
-            j = j+1;
-        if (temp > arr[j])
+        if (m < number && arr[m+1] > arr[m])
+            m = m+1;
+        if (temp > arr[m])
             break;
-        else if (temp <= arr[j])
+        else if (temp <= arr[m])
         {
-            arr[j/2] = arr[j];
-            j = 2*j;
+            arr[m/2] = arr[m];
+            m = 2*m;
         }
     }
-    arr[j/2] = temp;
+    arr[m/2] = temp;
     return;
 }
 void heapsort(int *arr, int num)
@@ -37,7 +37,7 @@ void createHeap(int *arr, int num)
     int i;
     for(i = num/2; i >= 1; i--)
     {
-        heap(arr, i, num); 
+        heap(arr, i, num);
     }
 }
 int main()
