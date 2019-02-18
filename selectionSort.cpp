@@ -5,24 +5,24 @@ using namespace std;
 
 int main()
 {
-    int index,key,temp,num;
-    cout<<"How many elements do you want? \n";
-    cin>>num;
-    int arr[num];
+    int index,valu,temp,number;
+    cout<<"elements want? "<<endl;
+    cin>>number;
+    int arr[number];
     cout<<"enter values of array : ";
-    for (int i = 0; i < num; i++)
+    for (int i = 0; i < number; i++)
     {
         cin>>arr[i];
     }
-    for (int i = 0; i <= num - 1; i++)
+    for (int i = 0; i <= number - 1; i++)
     {
         index = i;
-        key = arr[i];
-        for (int j = i + 1; j <= num; j++)
-        { 
-            if (arr[j] < key)
+        valu = arr[i];
+        for (int j = i + 1; j <= number; j++)
+        {
+            if (arr[j] < valu)
             {
-                key = arr[j];
+                valu = arr[j];
                 index = j;
             }
         }
@@ -30,10 +30,10 @@ int main()
         arr[i] = arr[index];
         arr[index] = temp;
     }
-    cout<<"After sorting using selection sort : \n";
-    for (int k = 0; k < num; k++)
+    cout<<"After sorting using selection sort"<<endl;
+    for (int n = 0; n < number; n++)
     {
-        cout<<arr[k]<<endl;
+        cout<<arr[n]<<endl;
     }
     return 0;
 }
