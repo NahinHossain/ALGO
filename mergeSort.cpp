@@ -1,30 +1,28 @@
 #include<iostream>
-
 using namespace std;
 
-void sort(int arr[],int x, int y,int r)  
-{
+void sort(int arr[],int a, int s,int n){
 
-	int num1=y-x+1,i,j,k;     
+	int num1=s-a+1,i,j,k;
 
-	int num2=r-y;               
+	int num2=n-s;
 
 	int left[num1], right[num2];
 
 	for(i=0;i<num1;i++)
 
 	{
-		left[i]=arr[x+i];
+		left[i]=arr[a+i];
 	}
 
 	for(j=0;j<num2;j++)
 	{
-		right[j]=arr[y+j+1];
+		right[j]=arr[s+j+1];
 	}
 
 	i=0,j=0;
 
-	for(k=x;i<num1 && j<num2;k++)
+	for(k=a;i<num1 && j<num2;k++)
 	{
 		if(left[i]<right[j])
 		{
@@ -36,58 +34,49 @@ void sort(int arr[],int x, int y,int r)
 		}
 	}
 
-	while(i<num1)            
+	while(i<num1)
 	{
 		arr[k++]=left[i++];
 	}
-	
-	while(j<num2)          
+
+	while(j<num2)
 	{
 		arr[k++]=right[j++];
 	}
 }
 
-void mergeSort(int arr[],int x,int r)   
+void mergeSort(int arr[],int a,int n)
 {
-	int y;                                
+	int s;
 
-	if(x<r)
+	if(a<n)
 	{
-		y=(x+r)/2;                     
-		mergeSort(arr,x,y);
-		mergeSort(arr,y+1,r);
-		sort(arr,x,y,r);
+		s=(a+n)/2;
+		mergeSort(arr,a,s);
+		mergeSort(arr,s+1,n);
+		sort(arr,a,s,n);
 	}
 
-} 
+}
+int main(){
 
-
-int main()
-{
-
-	int arrSize;                        
-
-	cout<<"How many elements do you want to enter : ";
-
+	int arrSize;
+	cout<<"elements enter : "<<endl;
 	cin>>arrSize;
-
 	int arr[arrSize];
-	
 	cout<<"Enter the elements :";
-
 	for(int i=0;i<arrSize;i++)
-	{ 
+	{
 		cin>>arr[i];
 	}
 
 	mergeSort(arr,0,arrSize-1);
-	
    cout<<"Sorted elements using Merge sort : ";
-   
+
 	for(int i=0;i<arrSize;i++)
 	{
 		cout<<arr[i]<<" ";
 	}
-
 	cout<<endl;
 }
+
