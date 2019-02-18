@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 
@@ -45,19 +44,18 @@ void quickSort(int l,int h,int *x)
   }
 }
 
-int main()
-{
+int main(){
       int x[100],n,l,h,i;
-      cout<<"How many elements do you want to enter :";
+      cout<<"elements enter :";
       cin>>n;
       cout<<"Enter the elements:";
       for(i=0;i<n;i++)
-      cin>>x[i]; 
+      cin>>x[i];
 
       h=n-1;
       l=0;
       quickSort(l,h,x);
-      cout<<"\nAfter Sorting using Quick sort :\n";
+      cout<<"Quick sort"<<endl;
       for(i=0;i<n;i++)
       {
         cout<<x[i]<<"  ";
